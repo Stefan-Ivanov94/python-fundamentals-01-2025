@@ -138,12 +138,15 @@ elif choice in [2, 5, 8]:  # Patterns that need size
 
 # Step 4: Generate the selected pattern
 if choice == 1:  # Right-angled Triangle
-    # TODO: Loop through rows and print increasing stars
-    pass
+    for row in range(rows):
+        print('*' * (row + 1))
 
 elif choice == 2:  # Square with Hollow Center
-    # TODO: Create a square with a hollow center
-    pass
+    for row in range(size):
+        if row == 0 or row == (size - 1):
+            print('*' * size)
+        else:
+            print('*' + (' ' * (size - 2)) + '*')
 
 elif choice == 3:  # Diamond
     # TODO: Create a diamond shape using loops
