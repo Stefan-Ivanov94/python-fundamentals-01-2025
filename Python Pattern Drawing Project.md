@@ -149,30 +149,39 @@ elif choice == 2:  # Square with Hollow Center
             print('*' + (' ' * (size - 2)) + '*')
 
 elif choice == 3:  # Diamond
-    # TODO: Create a diamond shape using loops
-    pass
+    for row in range(rows//2 + 1):
+        print(' ' * (rows // 2 - row) + '*' * (row * 2 + 1))
+    for row in range((rows//2 - 1),-1,-1):
+        spacer = ' ' * (rows//2 - row)
+        print(spacer + '*' * (2*row +1))
 
 elif choice == 4:  # Left-angled Triangle
-    # TODO: Print decreasing stars for each row
-    pass
+    for row in range(rows, 0, -1):
+        print('*' * row)
 
 elif choice == 5:  # Hollow Square
     # TODO: Similar to choice 2 but ensure perfect square logic
     pass
 
 elif choice == 6:  # Pyramid
-    # TODO: Center-align stars to form a pyramid
-    pass
+    for row in range(rows):
+        spacer = ' ' * (rows - row - 1)
+        print(spacer + '*'*(2*row + 1))
 
 elif choice == 7:  # Reverse Pyramid
-    # TODO: Create an upside-down pyramid
-    pass
+    for row in range((rows - 1),-1,-1):
+        spacer = ' ' * (rows - (row + 1))
+        print(spacer + '*' * (2*row + 1))
 
 elif choice == 8:  # Rectangle with Hollow Center
     # TODO: Handle separate width and height inputs for rectangle
     width = int(input("Enter the width of the rectangle: "))
     height = int(input("Enter the height of the rectangle: "))
-    pass
+    for row in range(height):
+        if row == 0 or row == height - 1:
+            print('*' * width)
+        else:
+            print('*' + ' ' * (width - 2) + '*')
 
 else:
     print("❌ Invalid choice! Please restart the program.")
